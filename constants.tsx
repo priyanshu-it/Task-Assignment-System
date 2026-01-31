@@ -1,4 +1,3 @@
-
 import { TeamMember, Task, TaskPriority, TaskStatus, SkillLevel } from './types';
 
 export const INITIAL_MEMBERS: TeamMember[] = [];
