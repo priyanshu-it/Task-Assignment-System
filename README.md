@@ -1,6 +1,6 @@
 # Run and deploy Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:**  MERN STACK
 
 
 1. Install dependencies:
