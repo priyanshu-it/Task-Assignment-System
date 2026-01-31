@@ -78,7 +78,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                   <ClipboardList size={20} />
                 </div>
-                <h3 className="font-extrabold text-lg text-slate-900 dark:text-white tracking-tight">Task Pipeline</h3>
+                <h3 className="font-extrabold text-lg text-slate-900 dark:text-white tracking-tight">Task Management</h3>
               </div>
 
               <div className="flex items-center gap-1 bg-slate-50 dark:bg-darkBg p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/10 overflow-x-auto max-w-full">
@@ -161,8 +161,10 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
           </div>
         </div>
         <div>
-          <div className="bg-darkSurface rounded-[2.5rem] p-8">
-            <h3 className="font-extrabold text-white mb-6">
+
+          <div className="bg-white dark:bg-darkSurface border border-slate-200/60 dark:border-white/5 rounded-[2.5rem] overflow-hidden shadow-soft">
+          <div className="rounded-[2.5rem] p-8">
+            <h3 className="font-extrabold text-lg text-slate-900 dark:text-white tracking-tight mb-6">
               Team Workload
             </h3>
 
@@ -204,6 +206,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
 
