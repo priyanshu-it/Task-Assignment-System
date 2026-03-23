@@ -55,23 +55,19 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
     }
   };
 
-  const inputClass = "w-full bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-darkBorder rounded-2xl pl-12 pr-4 py-4 focus:outline-none focus:border-primary transition-all text-slate-900 dark:text-white";
-  const labelClass = "text-[10px] text-slate-400 dark:text-gray-500 font-bold uppercase tracking-widest ml-1";
+  const inputClass = "w-full bg-slate-50 dark:bg-darkBg border border-slate-500 dark:border-darkBorder rounded-2xl pl-12 pr-4 py-4 focus:outline-none focus:border-primary transition-all text-slate-900 dark:text-white";
+  const labelClass = "text-[10px] text-slate-500 dark:text-gray-500 font-bold uppercase tracking-widest ml-1";
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-slate-50 dark:bg-darkBg p-6 transition-colors duration-300">
       <div className="max-w-md w-full">
         <div className="flex flex-col items-center mb-10">
-          <div className="w-16 h-16 bg-white dark:bg-darkSurface border border-slate-200 dark:border-darkBorder rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-primary/10">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Zap className="text-darkBg" size={20} fill="currentColor" />
-            </div>
-          </div>
-          <h1 className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">TaskAI</h1>
+
+          <h1 className="text-3xl font-black text-primary text-slate-900 dark:text-white uppercase tracking-tighter">Task-AI</h1>
           <p className="text-slate-500 dark:text-gray-500 text-sm font-bold uppercase tracking-widest mt-1">Smart Assignment Portal</p>
         </div>
 
-        <div className="bg-white dark:bg-darkSurface border border-slate-200 dark:border-darkBorder rounded-xl overflow-hidden shadow-2xl shadow-primary/5">
+        <div className="bg-white dark:bg-darkSurface border border-slate-500 dark:border-darkBorder rounded-xl overflow-hidden shadow-2xl shadow-primary/5">
           <div className="flex border-b border-slate-100 dark:border-darkBorder p-2">
             <button
               onClick={() => { setActiveTab('admin'); setError(''); }}
@@ -96,9 +92,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
           <div className="p-8">
             {activeTab === 'admin' ? (
               <form onSubmit={handleAdminLogin} className="space-y-5">
-                <div className="mb-2 text-center">
-                  <p className="text-xs text-slate-500 dark:text-gray-400 font-medium">Secured by TaskAI Systems</p>
-                </div>
+
                 <div className="space-y-1">
                   <label className={labelClass}>Admin Email</label>
                   <div className="relative">
@@ -144,10 +138,6 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
               </form>
             ) : (
               <form onSubmit={handleEmployerLogin} className="space-y-5">
-                <div className="mb-2 text-center">
-                  <p className="text-xs text-slate-500 dark:text-gray-400 font-medium">Only registered team members can access.</p>
-                </div>
-
                 <div className="space-y-1">
                   <label className={labelClass}>Employer Email</label>
                   <div className="relative">
