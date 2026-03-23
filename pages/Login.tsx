@@ -20,7 +20,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
 
   const handleAdminLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === 'apriyanshu@gmail.com' && password === 'p0123') {
+    if (email === 'apriyanshu@gmail.com' && password === '01234') {
       onLogin({
         email,
         name: 'Priyanshu (Admin)',
@@ -44,7 +44,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
     }
 
     // Default password check
-    if (empPassword === 'emp123') {
+    if (empPassword === '01234') {
       onLogin({
         email: member.email,
         name: member.name,
@@ -71,11 +71,11 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
           <p className="text-slate-500 dark:text-gray-500 text-sm font-bold uppercase tracking-widest mt-1">Smart Assignment Portal</p>
         </div>
 
-        <div className="bg-white dark:bg-darkSurface border border-slate-200 dark:border-darkBorder rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/5">
+        <div className="bg-white dark:bg-darkSurface border border-slate-200 dark:border-darkBorder rounded-xl overflow-hidden shadow-2xl shadow-primary/5">
           <div className="flex border-b border-slate-100 dark:border-darkBorder p-2">
             <button
               onClick={() => { setActiveTab('admin'); setError(''); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-3xl text-sm font-bold transition-all ${activeTab === 'admin'
+              className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-xl text-sm font-bold transition-all ${activeTab === 'admin'
                 ? 'bg-blue-50 dark:bg-primary/10 text-blue-600 dark:text-primary'
                 : 'text-slate-400 dark:text-gray-500 hover:text-slate-600 dark:hover:text-gray-300'
                 }`}
@@ -84,7 +84,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
             </button>
             <button
               onClick={() => { setActiveTab('employer'); setError(''); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-3xl text-sm font-bold transition-all ${activeTab === 'employer'
+              className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-xl text-sm font-bold transition-all ${activeTab === 'employer'
                 ? 'bg-blue-50 dark:bg-primary/10 text-blue-600 dark:text-primary'
                 : 'text-slate-400 dark:text-gray-500 hover:text-slate-600 dark:hover:text-gray-300'
                 }`}

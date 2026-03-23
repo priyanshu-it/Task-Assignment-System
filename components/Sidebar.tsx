@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, user, onToggleTheme, onLogout,
 
   const allItems = [
     { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard', path: '/', roles: ['admin', 'employer'] },
-    { id: 'people', icon: Users, label: 'People', path: '/people', roles: ['admin'] },
+    { id: 'people', icon: Users, label: 'Users', path: '/people', roles: ['admin'] },
     { id: 'tasks', icon: ClipboardList, label: 'Tasks', path: '/tasks', roles: ['admin', 'employer'] },
     { id: 'ai-assignment', icon: Zap, label: 'AI Assignment', path: '/ai-assignment', badge: 'AI', roles: ['admin'] },
   ];
@@ -67,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, user, onToggleTheme, onLogout,
               <item.icon size={20} className={isActive ? 'text-blue-600 dark:text-primary' : 'text-slate-400 dark:text-gray-400 group-hover:text-slate-900 dark:group-hover:text-white'} />
               <span className="font-medium text-sm flex-1 text-left">{item.label}</span>
               {item.badge && (
-                <span className="bg-primary text-darkBg text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">
+                <span className="border border-primary text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">
                   {item.badge}
                 </span>
               )}
@@ -81,13 +81,13 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, user, onToggleTheme, onLogout,
           <p className="text-[10px] text-slate-400 dark:text-gray-500 font-bold uppercase tracking-wider">Logged in as</p>
           <p className="text-xs font-bold text-slate-900 dark:text-white truncate">{user?.name}</p>
         </div>
-        <button
+        {/* <button
           onClick={onToggleTheme}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-[#0c1222] hover:text-slate-900 dark:hover:text-white transition-all"
         >
           {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           <span className="font-medium text-sm">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-        </button>
+        </button> */}
         <button
           onClick={onLogout}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all"

@@ -58,7 +58,6 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-10 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
-          <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em] block mb-2">Workspace Overview</span>
           <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Main Dashboard</h1>
         </div>
       </div>
@@ -72,16 +71,16 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white dark:bg-darkSurface border border-slate-200/60 dark:border-white/5 rounded-[2.5rem] overflow-hidden shadow-soft">
+          <div className="bg-white dark:bg-darkSurface border border-slate-300 dark:border-white/5 rounded-xl overflow-hidden shadow-soft">
             <div className="p-8 border-b border-slate-100 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
                   <ClipboardList size={20} />
                 </div>
-                <h3 className="font-extrabold text-lg text-slate-900 dark:text-white tracking-tight">Task Management</h3>
+                <h3 className="font-extrabold text-lg text-slate-900 text-WHITE tracking-tight">Task Overview</h3>
               </div>
 
-              <div className="flex items-center gap-1 bg-slate-50 dark:bg-darkBg p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/10 overflow-x-auto max-w-full">
+              <div className="flex items-center gap-1 bg-white dark:bg-darkSurface p-1 rounded-xl border border-slate-200 dark:border-darkBorder shadow-sm overflow-x-auto max-w-[250px] sm:max-w-none">
                 {[TaskStatus.PENDING, TaskStatus.ASSIGNED, TaskStatus.IN_PROGRESS, TaskStatus.DONE].map((status) => (
                   <button
                     key={status}
@@ -100,7 +99,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
             <div className="p-8 space-y-4">
               {sortedTasks.length > 0 ? (
                 sortedTasks.map(task => (
-                  <div key={task.id} className="bg-slate-50/50 dark:bg-white/[0.02] border border-slate-200/50 dark:border-white/5 p-6 rounded-3xl group hover:border-primary/40 transition-all duration-300">
+                  <div key={task.id} className="bg-slate-50/50 dark:bg-white/[0.02] border border-slate-300 dark:border-white/5 p-6 rounded-xl group hover:border-primary/40 transition-all duration-300">
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex-1 min-w-0">
                         <h4 className="font-extrabold text-slate-900 dark:text-white text-lg tracking-tight group-hover:text-primary transition-colors">{task.title}</h4>
@@ -162,7 +161,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
         </div>
         <div>
 
-          <div className="bg-white dark:bg-darkSurface border border-slate-200/60 dark:border-white/5 rounded-[2.5rem] overflow-hidden shadow-soft">
+          <div className="bg-white dark:bg-darkSurface border border-slate-300 dark:border-white/5 rounded-xl overflow-hidden shadow-soft">
           <div className="rounded-[2.5rem] p-8">
             <h3 className="font-extrabold text-lg text-slate-900 dark:text-white tracking-tight mb-6">
               Team Workload
@@ -178,7 +177,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
               {membersWithLoad.slice(0, 6).map(member => (
                 <div key={member.id}>
                   <div className="flex justify-between text-xs font-bold">
-                    <span className="text-white">{member.name}</span>
+                    <span>{member.name}</span>
                     <span
                       className={
                         member.workload > 80
@@ -198,7 +197,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
                         backgroundColor:
                           member.workload > 80
                             ? '#ef4444'
-                            : '#00d1ff',
+                            : '#3b82f6',
                       }}
                     />
                   </div>
@@ -210,7 +209,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
         </div>
       </div>
 
-      <div className="bg-white dark:bg-darkSurface border border-slate-200/60 dark:border-white/5 rounded-[2.5rem] overflow-hidden shadow-soft">
+      <div className="bg-white dark:bg-darkSurface border border-slate-300 dark:border-white/5 rounded-xl overflow-hidden shadow-soft">
         <div className="p-8 border-b border-slate-100 dark:border-white/5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">

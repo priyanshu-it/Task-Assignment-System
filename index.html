@@ -16,21 +16,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#00d1ff',
-                        darkBg: '#050914',
-                        darkSurface: '#0c1222',
-                        darkBorder: '#1e293b',
+                        primary: '#3b82f6',
                     }
                 }
             }
-        }
-
-        // Prevent flash of wrong theme
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
+        };
     </script>
     <style>
         body {
