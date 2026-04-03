@@ -392,7 +392,7 @@ const Tasks: React.FC<TasksProps> = ({ tasks, user, members, onCreateTask, onUpd
               <label className="text-[10px] text-slate-400 dark:text-gray-500 font-bold uppercase tracking-widest ml-1">Hours</label>
               <input
                 type="number"
-                required
+                required readOnly
                 value={formData.estimatedHours}
                 onChange={e => setFormData({ ...formData, estimatedHours: parseInt(e.target.value) || 0 })}
                 className="w-full bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-darkBorder rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-slate-900 dark:text-white"

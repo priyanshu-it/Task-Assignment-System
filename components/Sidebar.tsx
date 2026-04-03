@@ -34,16 +34,14 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, user, onToggleTheme, onLogout,
 
   return (
     <div className={sidebarClasses}>
-      <div className="p-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-slate-100 dark:bg-darkSurface border border-slate-200 dark:border-darkBorder rounded-lg flex items-center justify-center">
-            <div className="w-5 h-5 bg-primary rounded-[2px]" />
-          </div>
+      <div className="p-6 flex items-center justify-between border-b border-slate-200 pb-4">
+        <div className="flex items-center gap-3 ">
           <div>
-            <h1 className="font-bold text-lg leading-tight text-slate-900 dark:text-white">TaskAI</h1>
+            <h1 className="font-bold text-lg leading-tight text-primary">TaskAI</h1>
             <p className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Smart Assignment</p>
           </div>
         </div>
+
         <button
           onClick={onClose}
           className="lg:hidden p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
@@ -81,13 +79,6 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, user, onToggleTheme, onLogout,
           <p className="text-[10px] text-slate-400 dark:text-gray-500 font-bold uppercase tracking-wider">Logged in as</p>
           <p className="text-xs font-bold text-slate-900 dark:text-white truncate">{user?.name}</p>
         </div>
-        {/* <button
-          onClick={onToggleTheme}
-          className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-[#0c1222] hover:text-slate-900 dark:hover:text-white transition-all"
-        >
-          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          <span className="font-medium text-sm">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-        </button> */}
         <button
           onClick={onLogout}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all"

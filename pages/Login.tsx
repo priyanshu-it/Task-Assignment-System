@@ -20,7 +20,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
 
   const handleAdminLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === 'priyanshu@gmail.com' && password === '01234') {
+    if (email === 'sepriyanshu21@gmail.com' && password === '0123') {
       onLogin({
         email,
         name: 'Priyanshu (Admin)',
@@ -44,7 +44,7 @@ const Login: React.FC<LoginProps> = ({ onLogin, members }) => {
     }
 
     // Default password check
-    if (empPassword === '01234') {
+    if (empPassword === '0123') {
       onLogin({
         email: member.email,
         name: member.name,
