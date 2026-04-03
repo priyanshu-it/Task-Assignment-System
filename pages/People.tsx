@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Plus, MoreVertical, Mail, Edit2, Trash2 } from 'lucide-react';
+import { Plus, MoreVertical, Mail, Edit2, Trash2, ClipboardList } from 'lucide-react';
 import { TeamMember, Skill, User, SkillLevel } from '../types';
 import { Modal, SkillBuilder } from '../components/Modals';
 
@@ -127,6 +126,12 @@ const People: React.FC<PeopleProps> = ({ members, onAddMember, onUpdateMember, o
             </div>
           </div>
         ))}
+        {members.length === 0 && (
+          <div className="col-span-full py-20 text-center">
+            <ClipboardList size={40} className="mx-auto text-slate-200 dark:text-slate-800 mb-4" />
+            <p className="text-slate-400 dark:text-slate-600 font-black uppercase tracking-widest text-sm">No team members found</p>
+          </div>
+        )}
       </div>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={editingId ? "Edit Team Member" : "Add Team Member"}>
