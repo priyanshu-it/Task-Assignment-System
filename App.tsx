@@ -227,17 +227,6 @@ const AppContent: React.FC = () => {
     navigate('/ai-assignment');
   };
 
-  if (loading) {
-    return (
-      <div className="flex h-screen w-screen items-center justify-center bg-slate-50 dark:bg-darkBg">
-        <div className="flex flex-col items-center gap-4">
-          <div className="h-12 w-12 animate-spin rounded-full border-4 border-primary border-t-transparent shadow-lg shadow-primary/20"></div>
-          <p className="text-sm font-bold text-slate-500 dark:text-primary animate-pulse uppercase tracking-widest">Loading TaskAI...</p>
-        </div>
-      </div>
-    );
-  }
-
   if (error === 'PERMISSION_DENIED') {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-slate-50 dark:bg-darkBg p-6">
@@ -321,7 +310,7 @@ const AppContent: React.FC = () => {
                 <Route path="/" element={<Dashboard members={members} tasks={tasks} onAnalyze={handleDashboardAnalyze} user={currentUser} />} />
                 <Route path="/people" element={<People members={members} onAddMember={handleAddMember} onUpdateMember={handleUpdateMember} onDeleteMember={handleDeleteMember} user={currentUser} />} />
                 {/* Updated AIAssignment route to pass user prop */}
-                <Route path="/ai-assignment" element={<AIAssignment tasks={tasks} members={members} selectedTask={analyzingTask} onAssign={handleAssign} user={currentUser} onCreateTask={handleCreateTask} />} />
+                <Route path="/ai-assignment" element={<AIAssignment tasks={tasks} members={members} selectedTask={analyzingTask} onAssign={handleAssign} />} />
                 <Route path="/tasks" element={<Tasks tasks={tasks} members={members} onCreateTask={handleCreateTask} onUpdateTask={handleUpdateTask} onDeleteTask={handleDeleteTask} onUpdateStatus={handleUpdateTaskStatus} user={currentUser} />} />
                 <Route path="/login" element={<Navigate to="/" replace />} />
                 <Route path="*" element={<Navigate to="/" replace />} />

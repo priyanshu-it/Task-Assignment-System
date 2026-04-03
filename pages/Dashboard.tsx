@@ -80,15 +80,13 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
                 <h3 className="font-extrabold text-lg text-slate-900 text-WHITE tracking-tight">Task Overview</h3>
               </div>
 
-              <div className="flex items-center gap-1 bg-white dark:bg-darkSurface p-1 rounded-xl border border-slate-200 dark:border-darkBorder shadow-sm overflow-x-auto max-w-[250px] sm:max-w-none">
+              <div className="flex items-center gap-2 bg-white dark:bg-darkSurface p-1 rounded-xl border border-slate-200 dark:border-darkBorder shadow-sm overflow-x-auto max-w-[250px] sm:max-w-none">
                 {[TaskStatus.PENDING, TaskStatus.ASSIGNED, TaskStatus.IN_PROGRESS, TaskStatus.DONE].map((status) => (
                   <button
                     key={status}
                     onClick={() => setTaskStatusFilter(status)}
-                    className={`px-4 py-2.5 rounded-xl text-[9px] font-black transition-all uppercase tracking-widest whitespace-nowrap ${taskStatusFilter === status
-                      ? 'bg-primary text-darkBg shadow-accent'
-                      : 'text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
-                      }`}
+                    className={`px-2.5 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-md transition-colors ${taskStatusFilter === status? 
+                      'bg-primary text-white shadow-accent' : ''}`}
                   >
                     {status.replace('_', ' ')}
                   </button>
@@ -102,7 +100,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
                   <div key={task.id} className="bg-slate-50/50 dark:bg-white/[0.02] border border-slate-300 dark:border-white/5 p-6 rounded-xl group hover:border-primary/40 transition-all duration-300">
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-extrabold text-slate-900 dark:text-white text-lg tracking-tight group-hover:text-primary transition-colors">{task.title}</h4>
+                        <h4 className="font-extrabold text-slate-700 dark:text-white text-base tracking-tight transition-colors">{task.title}</h4>
                         <div className="flex items-center gap-4 mt-2">
                           <div className="flex items-center gap-1.5 text-[10px] font-black text-slate-400 dark:text-slate-600 uppercase tracking-widest">
                             <CalendarDays size={14} />
@@ -121,7 +119,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
                           isAdmin && (
                             <button
                               onClick={() => onAnalyze(task)}
-                              className="group/btn flex items-center gap-2 bg-primary text-darkBg px-5 py-3 rounded-2xl text-[11px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-accent"
+                              className="group/btn flex items-center gap-2 bg-primary text-white px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-accent"
                             >
                               Assign <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                             </button>
@@ -189,7 +187,7 @@ const Dashboard: React.FC<DashboardProps> = ({ members, tasks, user, onAnalyze }
                     </span>
                   </div>
 
-                  <div className="h-2 mt-2 bg-white/5 rounded-full">
+                  <div className="h-2 mt-2 bg-primarylight rounded-full">
                     <div
                       className="h-full rounded-full transition-all"
                       style={{

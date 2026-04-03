@@ -7,8 +7,7 @@ import { Task, TeamMember, MatchResult } from "./types";
 export const getMatchingAnalysis = async (
   task: Task,
   members: TeamMember[]
-): Promise<MatchResult[]> => {
-  // ⏱ 3 seconds delay (simulate AI latency)
+): Promise<MatchResult[]> => { // ⏱ 3 seconds
   await new Promise(resolve => setTimeout(resolve, 3000));
 
   return members

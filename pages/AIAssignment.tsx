@@ -104,7 +104,7 @@ const AIAssignment: React.FC<AIAssignmentProps> = ({ tasks, members, selectedTas
                   </div>
                   <button
                     onClick={(e) => { e.stopPropagation(); setSelectedTask(task); handleAnalyze(task); }}
-                    className="flex items-center gap-2 bg-blue-600 dark:bg-primary text-white dark:text-darkBg px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 dark:hover:bg-blue-400 transition-all"
+                    className="flex items-center gap-2 bg-blue-600 dark:bg-primary text-white dark:text-darkBg px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 dark:hover:bg-blue-400 transition-all"
                   >
                     {isAnalyzing && selectedTask?.id === task.id ? <Loader2 size={14} className="animate-spin" /> : <Zap size={14} />}
                     Analyze
@@ -164,7 +164,7 @@ const AIAssignment: React.FC<AIAssignmentProps> = ({ tasks, members, selectedTas
                         </div>
                         <button
                           onClick={() => selectedTask && onAssign(selectedTask.id, member.id)}
-                          className="flex items-center gap-2 bg-emerald-500 dark:bg-emerald-400 text-white dark:text-darkBg px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-emerald-300 transition-colors shadow-sm"
+                          className="flex items-center gap-2 bg-emerald-500 dark:bg-emerald-400 text-white dark:text-darkBg px-3 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-emerald-300 transition-colors shadow-sm"
                         >
                           <Check size={14} /> Assign
                         </button>
